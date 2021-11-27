@@ -17,16 +17,21 @@ public class Key : MonoBehaviour
         }
         else
         {
-            guesser.activeKeys.Remove(this);
-            active = false;
-            if (note.Contains("#"))
-            {
-                GetComponent<SpriteRenderer>().color = Color.black;
-            }
-            else
-            {
-                GetComponent<SpriteRenderer>().color = Color.white;
-            }
+            Deactivate();
+        }
+    }
+
+    public void Deactivate()
+    {
+        guesser.activeKeys.Remove(this);
+        active = false;
+        if (note.Contains("#"))
+        {
+            GetComponent<SpriteRenderer>().color = Color.black;
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().color = Color.white;
         }
     }
 }

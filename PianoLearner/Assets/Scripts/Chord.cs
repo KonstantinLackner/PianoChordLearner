@@ -14,7 +14,7 @@ public class Chord
         this.notes = notes;
     }
 
-    public bool checkChord(String notesGiven)
+    public bool CheckChord(String notesGiven)
     {
         foreach (String note in notes) 
         {
