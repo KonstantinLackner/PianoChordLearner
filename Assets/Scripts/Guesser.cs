@@ -57,6 +57,10 @@ public class Guesser : MonoBehaviour
         blocked = true;
         yield return new WaitForSeconds(1);
         guessedCurrent = true;
+        foreach (var key in activeKeys)
+        {
+            key.audioSource.Play();
+        }
         List<Key> activeKeysCopy = new List<Key>(activeKeys);
         foreach (var key in activeKeysCopy)
         {

@@ -6,6 +6,12 @@ public class Key : MonoBehaviour
     private bool active = false;
     public String note;
     public Guesser guesser;
+    public AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     private void OnMouseDown()
     {
@@ -14,6 +20,7 @@ public class Key : MonoBehaviour
             guesser.activeKeys.Add(this);
             active = true;
             GetComponent<SpriteRenderer>().color = Color.yellow;
+            audioSource.Play();
         }
         else
         {
